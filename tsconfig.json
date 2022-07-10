@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
+    "useDefineForClassFields": true,
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
@@ -15,5 +15,13 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "index.d.ts",
+    "types/**/*.d.ts",
+    "types/**/*.ts"
+  ]
 }
