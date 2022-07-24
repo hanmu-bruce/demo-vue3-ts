@@ -4,7 +4,7 @@ import axios, {
   AxiosRequestConfig,
   AxiosResponse,
 } from 'axios';
-import showCodeMessage from '@/api/code';
+import showCodeMessage from '@/utils/code';
 import { formatJsonToUrlParams, instanceObject } from '@/utils/format';
 import { ElMessage } from 'element-plus';
 const BASE_PREFIX = import.meta.env.VITE_API_BASEURL;

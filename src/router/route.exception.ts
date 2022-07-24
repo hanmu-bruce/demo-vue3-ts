@@ -7,6 +7,7 @@ const exceptionRoutes: Array<RouteRecordRaw> = [
     name: '401',
     meta: {
       title: '需要登录',
+      hidden: true,
     },
     component: () => import('@/views/exception/401.vue'),
   },
@@ -15,12 +16,15 @@ const exceptionRoutes: Array<RouteRecordRaw> = [
     name: '404',
     meta: {
       title: '非常抱歉,页面走丢了',
+      hidden: true,
     },
     component: () => import('@/views/exception/404.vue'),
   },
   {
     path: '/:pathMatch(.*)',
-    meta: {},
+    meta: {
+      hidden: true,
+    },
     redirect: '/404',
   },
 ];
