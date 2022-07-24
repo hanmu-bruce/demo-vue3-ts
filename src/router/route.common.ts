@@ -3,12 +3,9 @@ import { RouteRecordRaw } from 'vue-router';
 import Layout from '@/views/layout/index.vue';
 const commonRoutes: Array<RouteRecordRaw> = [
   {
-    path: '/form',
-    component: Layout,
+    path: '',
     meta: { hidden: true },
-    children: [
-      { path: 'index', component: () => import('@/views/form/index.vue') },
-    ],
+    component: () => import('@/views/login/index.vue'),
   },
 ];
 

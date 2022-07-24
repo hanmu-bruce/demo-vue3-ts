@@ -14,7 +14,7 @@ const axiosInstance: AxiosInstance = axios.create({
   // 前缀
   baseURL: BASE_PREFIX,
   // 超时
-  timeout: 1000 * 30,
+  timeout: 1000 * 5,
   // 请求头
   headers: {
     'Content-Type': 'application/json',
@@ -37,7 +37,12 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
     if (response.status === 200) {
-      return response.data;
+      const { data, code } = response.data;
+      if (code == 0) {
+        return data;
+      } else {
+        ElMessage.info(JSON.stringify(response.data));
+      }
     }
     ElMessage.info(JSON.stringify(response.status));
     return response;

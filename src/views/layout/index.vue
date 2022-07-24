@@ -1,25 +1,22 @@
 <template>
   <div class="flex h-full">
-    <Menu :data="data" :defaultActiveIndex="activeIndex" class="w-200px" />
+    <Menu :data="data" :defaultActiveIndex="activeIndex" class="w-270px" />
     <div class="flex-1">
-      <router-view></router-view>
+      <router-view :key="$route.fullPath"></router-view>
     </div>
   </div>
 </template>
 <script setup lang="tsx">
 import Menu from '@/components/menu/index';
 import permission from '@/store/permission';
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed, onMounted, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { getMenus } from '@/api/login';
+import { getAssetsFile } from '@/utils/basic';
 const route = useRoute();
+const router = useRouter();
 const permissionStore = permission();
-const data = permissionStore.menus;
-const activeIndex = computed(() => route.name?.toString());
+const data = computed(() => permissionStore.menus);
+const activeIndex = computed(() => route.name.toString());
 </script>
-<style lang="less" scoped>
-// :deep(.el-menu) {
-//   width: 200px;
-//   display: inline-block;
-//   height: 100%;
-// }
-</style>
+<style lang="less" scoped></style>
