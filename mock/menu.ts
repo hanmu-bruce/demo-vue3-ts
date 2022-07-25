@@ -14,17 +14,17 @@ export default [
           },
           {
             name: 'roleManagement',
-            title: 'roleManagement',
+            title: 'role Management',
             icon: 'next.png',
             children: [
               {
                 name: 'roleAdd',
-                title: 'roleAdd',
+                title: 'role Add',
                 children: [],
               },
               {
                 name: 'roleDelete',
-                title: 'roleDelete',
+                title: 'role Delete',
                 children: [],
               },
             ],
