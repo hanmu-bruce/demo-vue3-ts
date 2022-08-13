@@ -18,6 +18,20 @@ const asyncRoutes: Array<RouteRecordRaw> = [
     ],
   },
   {
+    name: 'demoManagement',
+    path: '/demo',
+    component: Layout,
+    redirect: '/demo/index',
+
+    children: [
+      {
+        path: 'index',
+        name: 'demo',
+        component: () => import('@/views/demo.vue'),
+      },
+    ],
+  },
+  {
     name: 'roleManagement',
     path: '/roleManagement',
     component: Layout,

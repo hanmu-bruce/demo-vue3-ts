@@ -28,6 +28,7 @@ export default defineComponent({
               index={item.name}
               onClick={() => {
                 tagListStore.addTag({ name: item.name, title: item.title });
+                console.log('item name ', item.name);
                 router.push({
                   name: item.name,
                   query: { key: new Date().getTime() },

@@ -13,6 +13,7 @@ onMounted(async () => {
   permissionStore.setMenus(menus);
   // 过滤路由
   await permissionStore.addRoutes(menus);
+  // 添加路由
   router.push({ name: 'overview' });
 });
 </script>

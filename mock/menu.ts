@@ -13,6 +13,12 @@ export default [
             children: [],
           },
           {
+            name: 'demo',
+            title: 'demo',
+            icon: 'good.png',
+            children: [],
+          },
+          {
             name: 'roleManagement',
             title: 'role Management',
             icon: 'next.png',
